@@ -34,9 +34,9 @@
 # `mail.` before it).
 
 echo "Installing programs..."
-apt install postfix dovecot-imapd dovecot-sieve opendkim spamassassin spamc
+pkg_add postfix dovecot-imapd dovecot-sieve opendkim spamassassin spamc
 # Check if OpenDKIM is installed and install it if not.
-which opendkim-genkey >/dev/null 2>&1 || apt install opendkim-tools
+which opendkim-genkey >/dev/null 2>&1 || pkg_add opendkim-tools
 domain="$(cat /etc/mailname)"
 subdom="mail"
 maildomain="$subdom.$domain"
